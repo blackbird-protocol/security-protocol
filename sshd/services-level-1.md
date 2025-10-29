@@ -17,6 +17,11 @@ Tambahkan pada bagian paling bawah file
 ```
 Protocol 2
 
+AuthorizedKeysFile	.ssh/authorized_keys
+
+PubkeyAuthentication yes
+PasswordAuthentication yes
+
 Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
 KexAlgorithms curve25519-sha256@libssh.org
 MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256
@@ -33,3 +38,17 @@ AllowAgentForwarding no
 AllowTcpForwarding no
 X11Forwarding no
 ```
+
+copy keys to server and change from
+
+```
+PasswordAuthentication yes
+```
+
+to
+
+```
+PasswordAuthentication no
+```
+
+
